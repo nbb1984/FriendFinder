@@ -1,7 +1,7 @@
 var friends = [
 	{
 		name: "Ahmed",
-		photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		photo: "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
 		scores:[
 		      5,
 		      1,
@@ -17,7 +17,7 @@ var friends = [
 	},
 	{
 		name: "Henry",
-		photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		photo: "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
 		scores:[
 		      3,
 		      3,
@@ -33,7 +33,7 @@ var friends = [
 	},
 	{
 		name: "Katie",
-		photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		photo: "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
 		scores:[
 		      4,
 		      1,
@@ -49,7 +49,7 @@ var friends = [
 	},
 	{
 		name: "Brad",
-		photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		photo: "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
 		scores:[
 		      1,
 		      2,
@@ -65,7 +65,7 @@ var friends = [
 	},
 	{
 		name: "Paul",
-		photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		photo: "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
 		scores:[
 		      5,
 		      4,
@@ -81,7 +81,7 @@ var friends = [
 	},
 	{
 		name: "Alice",
-		photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		photo: "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
 		scores:[
 		      2,
 		      3,
@@ -97,7 +97,7 @@ var friends = [
 	},
 	{
 		name: "Bob",
-		photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+		photo: "http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg",
 		scores:[
 		      2,
 		      1,

@@ -55,10 +55,13 @@ module.exports = function(app) {
       });
 
       friendsData.push(newFriend);
-      friendMatch.push(finalFriend);
-      friendMatch.push(finalFriendPhoto);
+      friendMatch = {
+        'name' : finalFriend,
+        'photo' : finalFriendPhoto
+      }
       console.log(friendsData);
     });
+    
     app.get("/api/friendMatch", function(req, res) {
       res.json(friendMatch);
     });
