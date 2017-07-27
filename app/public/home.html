@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hot Restaurant</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Friend Finder</h1>
+      <h3>Take Our Survey to Find Your Match!</h3>
+      <hr>
+      <a href="/survey"><button type="button" class="btn btn-danger btn-lg" style = "background-color: blue;"><span class="glyphicon glyphicon-eye-open"></span>View Friends</button></a>
+      <a href="/survey"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span>Find Your Match!</button></a>
+    </div>
+    
+  <script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newReservation = {
+        name: $("#name").val().trim(),
+        Phone: $("#phone").val().trim(),
+        Email: $("#email").val().trim(),
+        Id: $("#reservation-id").val().trim()
+      };
+
+       // Question: What does this code do??
+      $.post("/api/new", newReservation)
+      .done(function(data) {
+        console.log(data);
+        alert("Adding reservation...");
+      });
+    });
+  </script>
+</body>
+</html>

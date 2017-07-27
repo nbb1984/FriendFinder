@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Match Survey</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Friend Match Survey</h1>
+      <h3>Take the survey to find out who your closest match is?</h3>
+      <hr>
+      <a href="/"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-eye-open"></span>View Friends</button></a>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Survey Questions</strong></h3>
+          </div>
+          <div class="panel-body">
+            <form method="POST" role="form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="phone">Provide a Url to your personal photo:</label>
+                <input type="text" class="form-control" id="">
+              </div>
+              <div class="form-group">
+                <label for="name">How agreeable are you?</label>
+                <input type="text" class="form-control" id="q1">
+              </div>
+              <div class="form-group">
+                <label for="phone">How conscientious are you?</label>
+                <input type="text" class="form-control" id="q2">
+              </div>
+              <div class="form-group">
+                <label for="email">How extroverted are you?</label>
+                <input type="text" class="form-control" id="q3">
+              </div>
+              <div class="form-group">
+                <label for="force-points">Do you like to plan ahead, or are you someone who likes to just "wing" it? (Answer "1" if you are an extreme winger, "5" if you are an extreme planner.)</label>
+                <input type="text" class="form-control" id="q4">
+              </div>
+              <div class="form-group">
+                <label for="name">How relaxed are you? ("5" for very relaxed, "1" for very neurotic) </label>
+                <input type="text" class="form-control" id="q5">
+              </div>
+              <div class="form-group">
+                <label for="phone"> How tall are you? (answer 1 for very short, 5 for very tall) </label>
+                <input type="text" class="form-control" id="q6">
+              </div>
+              <div class="form-group">
+                <label for="email">How much do you like outdoor activities? (team sports, mountain sports, etc.) </label>
+                <input type="text" class="form-control" id="q7">
+              </div>
+              <div class="form-group">
+                <label for="force-points">How much of an artist are you? Do you like going to museums?</label>
+                <input type="text" class="form-control" id="q8">
+              </div>
+              <div class="form-group">
+                <label for="email">How much do you like food?</label>
+                <input type="text" class="form-control" id="q9">
+              </div>
+              <div class="form-group">
+                <label for="force-points"> Do you like to laugh at jokes or at situations? ("1" for only jokes, "5" for only situations) </label>
+                <input type="text" class="form-control" id="q10">
+              </div>             
+            </form>
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="submit-btn"><span class="glyphicon glyphicon-fire"></span> Submit Answers</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="confirmModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class = "row">
+          <div class = "col-md-12 center-block">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Thank you for Posting!</h4>
+            </div>
+            <div class = "row">
+                <div class="modal-body">
+                  <div class = "col-md-4"></div>
+                    <div class = "col-md-4">
+                        <p class = "report-p closest-friend"></p>
+                        <div class = 'photo'></div>
+                    </div>
+                  <div class = "col-md-4"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-default post-button exit-post-button" data-dismiss="modal" data-toggle="modal">Done</button>
+  
+            </div>  
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>
+  <script type="text/javascript">
+    $("#submit-btn").on("click", function(event) {
+      event.preventDefault();
+      var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photoUrl").val(),
+        scores: [
+            $("#q1").val().trim(),
+            $("#q2").val().trim(),
+            $("#q3").val().trim(),
+            $("#q4").val().trim(),
+            $("#q5").val().trim(),
+            $("#q6").val().trim(),
+            $("#q7").val().trim(),
+            $("#q8").val().trim(),
+            $("#q9").val().trim(),
+            $("#q10").val().trim(),
+          ]        
+      };
+
+      function getMatch() {
+        var currentURL = ;
+        $.ajax({ url: "http://localhost:3000/api/friendMatch", method: "GET" })
+        .done(function(data) {
+           $(".closest-friend").html(data[0]);
+           $(".photo").html(data[1]);
+           $('#confirmModal').modal('show');
+           console.log('this worked');
+           console.log(data);
+        });
+      }  
+
+      $.post("/api/newfriend", newFriend)
+      .done(function(data) {
+      });
+
+      getMatch();
+
+
+
+    });
+  </script>
+</body>
+</html>
