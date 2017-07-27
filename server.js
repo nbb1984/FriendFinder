@@ -33,7 +33,7 @@ app.get("/survey", function(req, res) {
   // return res.json(friends);
 // });
 
-// Create New Friend - takes in JSON input
+// Create New f - takes in JSON input
 // app.post("/api/friends", function(req, res) {
   // var newFriend = req.body;
   // console.log(newFriend);

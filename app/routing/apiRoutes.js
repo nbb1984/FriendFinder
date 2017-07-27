@@ -1,6 +1,6 @@
 
 var friendsData = require("../data/friends.js");
-var friendMatch = require("../data/friendMatch.js");
+var friendMatch = require("../data/friendmatch.js");
 
 
 module.exports = function(app) {
